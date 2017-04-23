@@ -1,6 +1,6 @@
-FROM alpine:latest
+FROM centos:7
 
-RUN apk add --no-cache nuttcp
+RUN yum install -y epel-release && yum install -y nuttcp && yum clean all
 
 ENTRYPOINT ["nuttcp"]
 CMD ["-h"]
